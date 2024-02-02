@@ -1,10 +1,11 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 require_once 'controller/controller.php';
 
 
 
-define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
+define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 //inicio las clases
 $ventasController = new Controller();
@@ -34,13 +35,14 @@ Usuarios(id: int, nombre: varchar, email: varchar, activo: boolean)
 */
 $params = explode('/', $action);
 switch ($params[0]) {
-    case "home"://// muestra todas las peliculas
-        
-        $id = 4;
-        $controller->resolver($id);
-    break;
+    case "home": 
 
-    default: 
-        echo('es defaul');
+        $id = 4;
+        $fecha = '2006-12-31';
+        $ventasController->resolver($id,$fecha);
+        break;
+
+    default:
+        echo ('es defaul');
         break;
 }

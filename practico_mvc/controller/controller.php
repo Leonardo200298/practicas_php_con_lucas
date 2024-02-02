@@ -1,5 +1,8 @@
 <?php
 require_once "model/eventos.model.php";
+require_once "model/ventas.model.php";
+
+    
 class Controller{
     
     private $modelVentas;
@@ -17,15 +20,15 @@ iv.	No es necesario implementar el router del sistema
 Listar todas las ventas realizadas en un día dado y para un evento dado. Por cada venta se deberá indicar id de la venta,
  cantidad de entradas, y precio total abonado. */
  
-    public function verificador(){
-
-    }
-    public function resolver($id){
-        
+    public function resolver($id,$fecha){
         $idEvento = $this->modelEventos->get_idEvento($id);
-        if (empty($idEvento) && !is_numeric($idEvento)) {
-            var_dump("no existe el evento con el id= ". $idEvento);
+        $fechaCompra = $this->modelVentas->get_fecha_compra($fecha);
+        if (!empty($idEvento) && !empty($fechaCompra)) {
+            $ventasDeUnDiaYeventoDado = $this->modelVentas->get_ventas_dia_determinado($idEvento,$fechaCompra);
+            var_dump($ventasDeUnDiaYeventoDado);
+        }else{
+            var_dump("esto");
         }
-        return;
+        
     }
 }

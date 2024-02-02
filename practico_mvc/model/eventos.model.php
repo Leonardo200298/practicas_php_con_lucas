@@ -7,9 +7,10 @@ class Eventos{
     }
 
     public function get_idEvento($id) {
-        $sentencia = $this->db->prepare("SELECT * FROM eventos WHERE id = ?");
+        $sentencia = $this->db->prepare('SELECT * FROM Eventos WHERE id = ?');
         $sentencia->execute([$id]);
         $idEvento = $sentencia->fetchAll(PDO::FETCH_OBJ);
-        return $idEvento;
+        
+        return $idEvento[0]->id;
     }
 }
