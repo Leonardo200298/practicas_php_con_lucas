@@ -13,9 +13,10 @@ class Ventas{
         return $diaVenta->fecha_compra;
     }
     public function get_ventas_dia_determinado($idEvento,$fechaCompra){
-        $sentencia = $this->db->prepare('SELECT * FROM Ventas WHERE id_evento = ? AND fecha_compra = ?');
+        $sentencia = $this->db->prepare('SELECT id, cant_entradas FROM Ventas WHERE id_evento = ? AND fecha_compra = ?');
         $sentencia->execute([$idEvento,$fechaCompra]);
         $diaVenta = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        
         return $diaVenta;
     }
 }
