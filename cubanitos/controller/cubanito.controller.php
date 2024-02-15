@@ -41,7 +41,7 @@ class CubanitoController{
                 $this->view->respuesta("Cubanito no encontrado", 404);
             }else{
                 $cubanito = $this->model->eliminarCubanito($id);
-                $this->view->respuesta("Se ha eliminado con exito!",$cubanito);
+                $this->view->respuesta("Se ha eliminado el cubanito con el id=".$id);
             }
         }
         
