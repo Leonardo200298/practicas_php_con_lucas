@@ -39,4 +39,9 @@ class CubanitoModel
         $todosLosCubanitosAptosCeliacos = $query->fetchAll(PDO::FETCH_OBJ);
         return $todosLosCubanitosAptosCeliacos;
     }
+    public function agregarCubanitoModel($id_tipo,$fecha_vencimiento,$cantidad){
+        $query = $this->db->prepare("INSERT INTO cubanito (id_tipo, fecha_vencimiento, cantidad) VALUES (?, ?, ?)");
+        $query->execute([$id_tipo,$fecha_vencimiento,$cantidad]);
+        return $this->db->lastInsertId();
+    }
 }

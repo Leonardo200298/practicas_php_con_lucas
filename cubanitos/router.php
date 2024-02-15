@@ -23,6 +23,7 @@ $router = new Router();
 
 $router->addRoute('cubanitos', 'GET', 'CubanitoController', 'obtenerCubanitos');
 $router->addRoute('cubanitos/aptoCeliaco', 'GET', 'CubanitoController', 'obtenerCubanitosAptosCeliacos');
+$router->addRoute('cubanitos', 'POST', 'CubanitoController', 'agregarCubanito');
 $router->addRoute('cubanitos/:ID', 'GET', 'CubanitoController', 'obtenerCubanito');
 $router->addRoute('cubanitos/:ID', 'DELETE', 'CubanitoController', 'borrarCubanito');
 $router->addRoute('tipo/:ID', 'GET', 'TipoController', 'obtenerTipo');

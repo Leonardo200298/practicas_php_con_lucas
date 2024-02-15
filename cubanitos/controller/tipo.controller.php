@@ -15,8 +15,7 @@ class TipoController
         $this->view = new TipoView();
         $this->data = file_get_contents("php://input");
     }
-    private function getData()
-    {
+    private function getData(){
         return json_decode($this->data);
     }
     public function obtenerTipo($params = null)
