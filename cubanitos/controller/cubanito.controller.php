@@ -46,4 +46,13 @@ class CubanitoController{
         }
         
     }
+    public function obtenerCubanitosAptosCeliacos($params = null){
+        $apto_celiacos = 1;
+        $cubanitosAptosCeliacos = $this->model->obtenerCubanitosParaCeliacosDB($apto_celiacos);
+        if (!$cubanitosAptosCeliacos){
+            $this->view->respuesta("no encontramos cubanitos celiacos", 404);
+        }else{
+            $this->view->respuesta($cubanitosAptosCeliacos);
+        }
+    }
 }
