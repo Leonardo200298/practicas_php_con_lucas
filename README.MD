@@ -103,5 +103,13 @@ __Formato JSON, via raw:__
     
 </p>
 
+## ● Stack de lenguajes y herramientas -->
+
+<ul>
+    <li>PHP</li>
+    <li>XAMPP</li>
+    <li>POSTMAN</li>
+</ul>
 
 
+## Desde ya gracias por la lectura de esta documentacion!
