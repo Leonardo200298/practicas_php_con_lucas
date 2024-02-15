@@ -2,6 +2,7 @@
 
 require_once 'libs/router.php';
 require_once 'controller/cubanito.controller.php';
+require_once 'controller/tipo.controller.php';
 
 /* Nuestro cliente Teresa necesita un sistema de control de stock para su fábrica de cubanitos.
 Ella les provee la siguiente base de datos:
@@ -23,6 +24,8 @@ $router = new Router();
 $router->addRoute('cubanitos', 'GET', 'CubanitoController', 'obtenerCubanitos');
 $router->addRoute('cubanitos/:ID', 'GET', 'CubanitoController', 'obtenerCubanito');
 $router->addRoute('cubanitos/:ID', 'DELETE', 'CubanitoController', 'borrarCubanito');
+$router->addRoute('tipo/:ID', 'GET', 'TipoController', 'obtenerTipo');
+$router->addRoute('tipo/:ID', 'PUT', 'TipoController', 'editarTipo');
 // defina la tabla de ruteo
 /* $router->addRoute('api/peliculas', 'GET', 'PeliculasController', 'obtenerTodasLasPeliculas');
 $router->addRoute('api/peliculas/:ID', 'GET', 'PeliculasController', 'obtenerUnaPelicula');
