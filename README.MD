@@ -1,6 +1,6 @@
 # Practicas en php con [Lucas!](https://github.com/LucasL2001)
 
-## Un dia nos propusimos a practicar servicios web API rest utlizando php con mi compañero de la facultad y surgio la necesidad de resolver este problema:
+## :
 
 <p> Nuestro cliente Teresa necesita un sistema de control de stock para su fábrica de cubanitos.
 Ella les provee la siguiente base de datos:
